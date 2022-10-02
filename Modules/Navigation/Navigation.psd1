@@ -70,7 +70,7 @@ NestedModules = @('.\Common.psm1',
                '.\Bookmarks.psm1')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Set-LocationWithCdPath', 'ln', 'Add-Bookmark'
+FunctionsToExport = @('Set-LocationWithCdPath', 'ln', 'Add-Bookmark')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = '*'
