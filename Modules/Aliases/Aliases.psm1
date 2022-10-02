@@ -5,4 +5,5 @@ Set-Alias b 'buku --suggest'
 # Nvim.
 Set-Alias vi nvim
 Set-Alias vim nvim
+
 Set-Alias lg lazygit

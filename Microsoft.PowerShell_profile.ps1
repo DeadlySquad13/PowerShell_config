@@ -1,8 +1,11 @@
 # Variables
-$Env:CDPATH = "$HOME\.bookmarks"
+$Env:BookmarksPath = "$HOME\.bookmarks"
+$Env:CDPATH = "$Env:BookmarksPath"
 $PSModules = $env:PSModulePath.split(';')[0]
 
 # Settings.
+# - Default editor.
+$env:EDITOR = "nvim"
 # - Bash-like completion
 # Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineKeyHandler -Key Tab -Function AcceptLine
@@ -30,6 +33,45 @@ function Get-CmdletAlias ($cmdletname) {
 #  cat 
 #}
 
+# https://stackoverflow.com/a/45643124
+function Find-PathInParentDirectories($pathToSearch, $fileName) {
+    if ($pathToSearch -eq "") {
+        return "File not found"
+    }
+    elseif (Test-Path "$pathToSearch\$fileName") {
+        return $pathToSearch
+    }
+    else {
+        return Find-PathInParentDirectories (Split-Path $pathToSearch) $fileName
+    }
+}
+
+function Get-PackageInfo() {
+    $head = Find-PathInParentDirectories ${pwd} package.json
+    if ($head -eq "File not found") {
+        return "package.json not found"
+    }
+
+    $packageInfo = cat ${head}/package.json | ConvertFrom-Json
+
+    return $packageInfo
+}
+function Get-DevDependencies() {
+    $packageInfo = $(Get-PackageInfo)
+    if ($packageInfo -eq "package.json not found") {
+        "packge.json not found"
+    }
+
+    return $(packageInfo).devDependencies
+}
+function Get-Dependencies() {
+    $packageInfo = Get-PackageInfo
+    if ($packageInfo -eq "package.json not found") {
+        return "packge.json not found"
+    }
+
+    return $(packageInfo).dependencies
+}
 
 # Utilities.
 Import-Module EnvManagement
