@@ -37,17 +37,17 @@
         },
         {
           "background": "cyan",
-          "foreground": "black",
+          "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
           "properties": {
             "style": "agnoster_short",
-            "folder_icon": "...",
-            "folder_separator_icon": "\ue0b1",
+            "folder_icon": "",
+            "folder_separator_icon": " \ue0b1 ",
             "home_icon": "~",
             "max_depth": 3
           },
           "style": "powerline",
-          "template": " \uf07b  {{ .Path }}{{ .Folder }} ",
+          "template": " \uf07b  {{ .Path }} ",
           "type": "path"
         },
         {
@@ -169,5 +169,6 @@
   ],
   "console_title_template": "{{ .Shell }} in {{ .Folder }}",
   "final_space": true,
+  "pwd": "osc7",
   "version": 2
 }
