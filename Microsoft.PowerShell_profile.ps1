@@ -99,3 +99,14 @@ Import-Module ProjectInfo
 
 # Aliases.
 Import-Module Aliases
+# - Fzf aliases.
+if ($(Get-CommandExists fzf*.exe) -and $(Get-ModuleExists PsFzf)) {
+  Set-PsFzfOption -EnableAliasFuzzyEdit # `fe`,
+  Set-PsFzfOption -EnableAliasFuzzyHistory # `fh`,
+  Set-PsFzfOption -EnableAliasFuzzySetLocation # `fd`.
+
+  if (Get-CommandExists scoop) {
+      Set-PsFzfOption -EnableAliasFuzzyScoop # `fs`.
+  }
+}
+
