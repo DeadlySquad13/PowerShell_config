@@ -1,28 +1,49 @@
+function pip() {
+    python -m pip
+}
+
+Export-ModuleMember -Function pip
+
 # * Venv
-# - Create venv.
-function Venv_Create() {
+function Create_Venv() {
   py -m venv .\.venv_win
 }
-# - Activate venv.
-function Venv_Activate() {
+function Activate_Venv() {
   .\.venv_win\Scripts\activate
 }
-# - Install dependencies (not quite venv functionality but similarily to npm i decided to leave it here).
-function Venv_Install() {
-}
-# - Deactive venv.
-function Venv_Deactive() {
+function Deactivate_Venv() {
   deactivate
 }
 
-Export-ModuleMember -Function Venv_*
+# Mapping functions to Linux naming.
+Set-Alias venv_create Create_Venv
+Set-Alias venv_activate Activate_Venv
+Set-Alias venv_deactivate Deactivate_Venv
+
+Export-ModuleMember -Alias venv_create, venv_activate, venv_deactivate
+Export-ModuleMember -Function *_Venv
 
 # * Pip.
+# - If the file wasn't found, return false.
+function Pip_InstallFromRequirements {
+  [OutputType([boolean])]
+  param([Parameter(Mandatory)]$requirementsFile)
+
+  if (Test-Path $requirementsFile) {
+    pip install -r $requirementsFile
+    return $true
+  }
+
+  return $false
+}
+
 # - Pip install passed as an argument package or install all packages from requirements file (like in npm i).
 function Pip_Install([string]$packageName) {
   if ( !$packageName )
   {
-    pip install -r .\requirements.txt
+    if (!(Pip_InstallFromRequirements('.\requirements.txt')) -and !(Pip_InstallFromRequirements('.\requirements-dev.txt'))) {
+      throw 'No requirements files found'
+    }
   }
   else
   {
@@ -35,12 +56,12 @@ Set-Alias pipi Pip_Install
 # - Pip remove package.
 function Pip_Remove($packageName) {
   pip uninstall "$packageName"
+}
 
 # - Pip remove package.
 Set-Alias piprm Pip_Remove
 
 Export-ModuleMember -Alias pipi, piprm
-}
 
 Export-ModuleMember -Function Pip_*
 
