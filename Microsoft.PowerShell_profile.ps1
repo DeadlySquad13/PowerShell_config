@@ -30,6 +30,35 @@ function Get-CmdletAlias ($cmdletname) {
       Format-Table -Property Definition, Name -AutoSize
 }
 
+function Get-ModuleExists {
+    [OutputType([boolean])]
+    param([Parameter(Mandatory)]$moduleName)
+
+    return $(Get-Module -ListAvailable -Name $moduleName).Length
+}
+
+function Get-CommandExists {
+    [OutputType([boolean])]
+    param([Parameter(Mandatory)]$commandName)
+
+    return $(Get-Command $commandName).Length
+}
+
+function Is-Directory {
+    [OutputType([boolean])]
+    param([Parameter(Mandatory)]$fileName)
+
+    return ($(Get-Item $target) -is [System.IO.DirectoryInfo])
+}
+
+# General.
+# From "C:\Test\Logs\Pass1.log" we get "Logs" - directory name of the file.
+function Get-DirectoryName {
+    param($path)
+
+    return Split-Path -Leaf (Split-Path -Parent $path)
+}
+
 #function Head ($count) {
 #  cat 
 #}
