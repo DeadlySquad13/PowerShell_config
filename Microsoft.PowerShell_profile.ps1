@@ -14,6 +14,7 @@ Set-PSReadlineOption -EditMode vi
 
 # - Terminal Icons.
 Import-Module -Name Terminal-Icons
+Set-TerminalIconsTheme -ColorTheme 'devblackops_light'
 
 # - Posh (pretty prompt).
 $OhMyPoshConfigPath = Join-Path -Path $PSModules -ChildPath 'OhMyPosh'
