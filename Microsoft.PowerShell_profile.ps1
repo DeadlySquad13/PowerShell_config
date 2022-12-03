@@ -122,3 +122,15 @@ function fvi($params) {
 function gvi($params) {
     Start-Process -WindowStyle Hidden goneovim $params
 }
+function Get-IsoDate() {
+    (Get-Date -Format "s").replace(':', '_')
+}
+
+$KBD_PATH = "~/Documents/KnowledgeBase__Data"
+function New-Note() {
+    $kbdPath = ((Get-Item $KBD_PATH) ? $KBD_PATH : '~/Documents')
+    $fileName = "$(Get-IsoDate)_temp.md"
+
+    fvi ${kbdPath}/${fileName}
+}
+
