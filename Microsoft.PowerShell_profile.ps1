@@ -110,3 +110,15 @@ if ($(Get-CommandExists fzf*.exe) -and $(Get-ModuleExists PsFzf)) {
   }
 }
 
+# - Start process without occupying current console.
+#function Start-Programm($params) {
+#    Start-Process -WindowStyle Hidden $params
+#}
+
+function fvi($params) {
+    Start-Process -WindowStyle Hidden fvim $params
+}
+
+function gvi($params) {
+    Start-Process -WindowStyle Hidden goneovim $params
+}
