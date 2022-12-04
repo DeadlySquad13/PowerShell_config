@@ -1,5 +1,5 @@
 function pip() {
-    python -m pip
+    python -m pip $args
 }
 
 Export-ModuleMember -Function pip
