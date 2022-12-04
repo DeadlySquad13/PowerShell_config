@@ -149,7 +149,14 @@ function Is-Directory {
     [OutputType([boolean])]
     param([Parameter(Mandatory)]$fileName)
 
-    return ($(Get-Item $target) -is [System.IO.DirectoryInfo])
+    return ($(Get-Item $fileName) -is [System.IO.DirectoryInfo])
+}
+
+function Is-File {
+    [OutputType([boolean])]
+    param([Parameter(Mandatory)]$fileName)
+
+    return ($(Get-Item $fileName) -is [System.IO.FileInfo])
 }
 
 # General.
