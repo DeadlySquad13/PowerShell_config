@@ -4,8 +4,109 @@ $Env:CDPATH = "$Env:BookmarksPath"
 $PSModules = $env:PSModulePath.split(';')[0]
 
 # Settings.
+# - Path Environment Variable.
+$WindowsEssentials = (
+    "C:\Windows",
+    "C:\Windows\System32",
+    "C:\Windows\System32\Wbem",
+    "C:\Windows\System32\WindowsPowerShell\v1.0\",
+    "C:\WINDOWS\System32\OpenSSH\"
+)
+
+$VisualStudioCode = (
+    "E:\soft\Visual Studio Code\Visual Studio Code 2019\VC\Tools\MSVC\14.25.28610\bin\HostX86\x86",
+    "E:\soft\Visual Studio Code\Visual Studio Code 2019\Common7\IDE\VC\VCPackages",
+    "E:\soft\Visual Studio Code\Visual Studio Code 2019\Common7\IDE\CommonExtensions\Microsoft\TestWindow",
+    "E:\soft\Visual Studio Code\Visual Studio Code 2019\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer",
+    "E:\soft\Visual Studio Code\Visual Studio Code 2019\MSBuild\Current\bin\Roslyn",
+    "E:\soft\Visual Studio Code\Visual Studio Code 2019\Team Tools\Performance Tools",
+    "E:\soft\Visual Studio Code\Visual Studio Code 2019\\MSBuild\Current\Bin",
+
+    "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\vs2019\",
+    "C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86",
+    "C:\Program Files (x86)\Windows Kits\10\bin\x86"
+)
+
+$WebDevelopment = (
+    "C:\Program Files (x86)\Yarn\bin\",
+    "E:\soft\Node.js\"
+)
+
+$Applied = (
+    "E:\soft\Calibre (Editing Epub files\",
+    "C:\Program Files (x86)\ffmpeg\bin"
+)
+
+$PathItems = $WindowsEssentials + $VisualStudioCode + $WebDevelopment + (
+    "C:\Program Files\PowerShell\7-preview",
+    "C:\Program Files\Common Files\Oracle\Java\javapath",
+    "C:\Users\Александр\AppData\Local\Programs\Python\Python38\Scripts\",
+    "C:\Users\Александр\AppData\Local\Programs\Python\Python38\",
+    "C:\Program Files (x86)\Common Files\Oracle\Java\javapath",
+    "C:\Program Files (x86)\Common Files\Oracle\Java\javapath",
+    "C:\ProgramData\Oracle\Java\javapath",
+    "C:\Program Files (x86)\Razer Chroma SDK\bin",
+    "C:\Program Files\Razer Chroma SDK\bin",
+    "C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common",
+    "C:\Program Files\MySQL\MySQL Utilities 1.6\",
+    "C:\Program Files\Microsoft\Web Platform Installer\",
+    "C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\",
+    "C:\Program Files\Microsoft SQL Server\110\Tools\Binn\",
+    "C:\Program Files\Microsoft SQL Server\120\Tools\Binn\",
+    "C:\Program Files\Java\jdk-14\bin",
+    "C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR",
+    "C:\Program Files\Microsoft SQL Server\130\Tools\Binn\",
+    "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\",
+    "C:\Program Files (x86)\IncrediBuild",
+    "E:\soft\Graphics Editors\QuickTime\QTSystem\",
+    "E:\soft\GitForWindows\Git\cmd",
+    "C:\Program Files\dotnet\",
+    "C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\",
+    "C:\Program Files\Azure Data Studio\bin",
+    "C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\",
+    "C:\Program Files\Microsoft SQL Server\150\Tools\Binn\",
+    "C:\Program Files\Microsoft SQL Server\150\DTS\Binn\",
+    "C:\Program Files\PuTTY\",
+    "C:\Program Files\Cloudflare\Cloudflare WARP\",
+    "E:\soft\DevOps\Services__Amazon\",
+    "C:\Program Files\Neovim\bin",
+    "C:\Program Files (x86)\dotnet\",
+    "C:\Program Files\PowerShell\7-preview\preview",
+    "C:\Program Files\Docker\Docker\resources\bin",
+    "C:\ProgramData\DockerDesktop\version-bin",
+
+    "C:\Users\ds13\AppData\Roaming\Python\Python310\Scripts",
+    "C:\Users\ds13\scoop\apps\python310\current\Scripts",
+    "C:\Users\ds13\scoop\apps\python310\current",
+    "C:\Users\ds13\scoop\apps\rustup-msvc\current\.cargo\bin",
+    "C:\Users\ds13\scoop\apps\mingw\current\bin",
+
+    "C:\Users\ds13\scoop\apps\perl\current\perl\site\bin",
+    "C:\Users\ds13\scoop\apps\perl\current\perl\bin",
+    "C:\Users\ds13\scoop\apps\perl\current\c\bin",
+
+    "C:\Users\ds13\scoop\apps\oh-my-posh\current\bin",
+    "C:\Users\ds13\scoop\apps\gcc\current\bin",
+    "C:\Users\ds13\scoop\shims",
+    "C:\ProgramData\Microsoft\Windows\Start Menu\Programs",
+    "C:\Users\Александр\.windows-build-tools\python27\",
+    "E:\soft\JetBrains\JetBrains PyCharm Professional\JetBrains PyCharm Professional 2019.2.4\bin",
+    "C:\Program Files (x86)\VirtuaWin",
+    "E:\soft\DevOps\Services__Amazon",
+    "C:\Users\Александр\AppData\Local\Programs\Microsoft VS Code\bin",
+    "E:\Archive\Installers\Soft\Applied\Programming\FVim",
+    "C:\Users\ds13\AppData\Local\Microsoft\WindowsApps\",
+    "C:\Program Files\PowerShell\7-preview",
+    "C:\Program Files\Docker\Docker\resources\bin",
+    "C:\Program Files\GoodSync",
+    "C:\Users\Александр\AppData\Roaming\Microsoft\Windows\Start Menu\Programs",
+    "C:\Users\ds13\AppData\Local\Programs\oh-my-posh\bin",
+    "C:\Users\Александр\AppData\Roaming\npm",
+    "E:\Scripts\EleDo"
+)
+$Env:Path = $PathItems -join [IO.Path]::PathSeparator
 # - Default editor.
-$env:EDITOR = "nvim"
+$Env:EDITOR = "nvim"
 # - Bash-like completion
 # Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineKeyHandler -Key Tab -Function AcceptLine
@@ -131,6 +232,31 @@ function New-Note() {
     $kbdPath = ((Get-Item $KBD_PATH) ? $KBD_PATH : '~/Documents')
     $fileName = "$(Get-IsoDate)_temp.md"
 
-    fvi ${kbdPath}/${fileName}
+    gvi ${kbdPath}/${fileName}
+}
+
+
+# Templates.
+$Env:TemplatePath="/mnt/e/Projects/--personal/ModuleT/src";
+
+function createModuleThmoon() {
+  # param(
+  #   componentName=$1
+  # )
+
+  # local moduleName='thmoon';
+
+  # mkdir $componentName;
+
+  # tpage --define Component=$componentName \
+  # $TEMPLATE_PATH/$moduleName/Component.tsx >> \
+  # $componentName/$componentName.tsx;
+
+  # tpage --define Component=$componentName \
+  # $TEMPLATE_PATH/$moduleName/Component.types.ts >> \
+  # $componentName/$componentName.types.ts;
+
+  # tpage $TEMPLATE_PATH/$moduleName/Component.module.css >> \
+  # $componentName/$componentName.module.css
 }
 
