@@ -223,13 +223,33 @@ if ($(Get-CommandExists fzf*.exe) -and $(Get-ModuleExists PsFzf)) {
 #    Start-Process -WindowStyle Hidden $params
 #}
 
+function avi() {
+    [OutputType([System.Diagnostics.Process])]
+    param([Parameter()]$params)
+
+    $title = 'NeoVim'
+    # FileSystemInfo is a base class for files and directories
+    #   [docs](https://learn.microsoft.com/en-us/dotnet/api/system.io.filesysteminfo?view=net-7.0)
+    if ($params -and ($(Get-Item $params) -is [System.IO.FileSystemInfo])) {
+        # $title = "$params - $title"
+        $title = "$params"
+        echo $title
+    }
+
+    Start-Process -WindowStyle Hidden alacritty -ArgumentList "--title", $title, "-e", "nvim ${params}"
+}
+
 function fvi($params) {
     Start-Process -WindowStyle Hidden fvim $params
 }
 
-function gvi($params) {
+function govi($params) {
     Start-Process -WindowStyle Hidden goneovim $params
 }
+
+# GuiVi stands for currently chosen gui client.
+Set-Alias gvi neovide
+
 function Get-IsoDate() {
     (Get-Date -Format "s").replace(':', '_')
 }
