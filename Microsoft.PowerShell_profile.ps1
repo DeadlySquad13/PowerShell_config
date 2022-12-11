@@ -1,7 +1,7 @@
 # Variables
 $Env:BookmarksPath = "$HOME\.bookmarks"
 $Env:CDPATH = "$Env:BookmarksPath"
-$PSModules = $env:PSModulePath.split(';')[0]
+$Env:PSModules = $Env:PSModulePath.split(';')[0]
 
 # Settings.
 # - Path Environment Variable.
