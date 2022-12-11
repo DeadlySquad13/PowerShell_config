@@ -1,6 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
+    "yellow": "#fffb38",
+    "python_bg": "p:yellow",
+    "python_fg": "#376c99",
     "ivory": "#aaaaaa"
   },
   "blocks": [
@@ -51,7 +54,7 @@
           "type": "path"
         },
         {
-          "background": "#fffb38",
+          "background": "p:yellow",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
@@ -91,10 +94,18 @@
       "alignment": "right",
       "segments": [
         {
+          "type": "python",
+          "foreground": "p:python_fg",
+          "background": "p:python_bg",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "template": "\uE235  {{ .Venv }} "
+        },
+        {
           "background": "lightBlue",
           "foreground": "black",
           "style": "plain",
-          "template": "<lightBlue,transparent>\ue0b6</> \uf489  {{ .Name }} <transparent,lightBlue>\ue0b2</>",
+          "template": "<lightBlue,{{ if .Segments.Python.Venv }}p:python_bg{{ else }}transparent{{ end }}>\ue0b6</> \uf489  {{ .Name }} <transparent,lightBlue>\ue0b2</>",
           "type": "shell"
         },
         {
