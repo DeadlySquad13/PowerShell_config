@@ -1,3 +1,8 @@
+# - Pip remove package.
+Set-Alias py python
+
+Export-ModuleMember -Alias py
+
 function pip() {
     python -m pip $args
 }
