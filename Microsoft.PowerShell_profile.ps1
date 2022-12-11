@@ -118,7 +118,7 @@ Import-Module -Name Terminal-Icons
 Set-TerminalIconsTheme -ColorTheme 'devblackops_light'
 
 # - Posh (pretty prompt).
-$OhMyPoshConfigPath = Join-Path -Path $PSModules -ChildPath 'OhMyPosh'
+$OhMyPoshConfigPath = Join-Path -Path $Env:PSModules -ChildPath 'OhMyPosh'
 $OhMyPoshTheme = Join-Path -Path $OhMyPoshConfigPath -ChildPath 'DeadlyAtelierSulphurpoolLight.omp.json'
 
 oh-my-posh init pwsh --config "$OhMyPoshTheme" | Invoke-Expression
