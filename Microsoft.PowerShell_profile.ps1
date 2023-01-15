@@ -124,6 +124,7 @@ Set-TerminalIconsTheme -ColorTheme 'devblackops_light'
 $OhMyPoshConfigPath = Join-Path -Path $Env:PSModules -ChildPath 'OhMyPosh'
 $OhMyPoshTheme = Join-Path -Path $OhMyPoshConfigPath -ChildPath 'DeadlyAtelierSulphurpoolLight.omp.json'
 
+$Env:VIRTUAL_ENV_DISABLE_PROMPT=1 # Disable default: we have already one in our custom prompt.
 oh-my-posh init pwsh --config "$OhMyPoshTheme" | Invoke-Expression
 
 
