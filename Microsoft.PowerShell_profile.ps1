@@ -103,7 +103,9 @@ $PathItems = $WindowsEssentials + $VisualStudioCode + $WebDevelopment + (
     "C:\Users\Александр\AppData\Roaming\Microsoft\Windows\Start Menu\Programs",
     "C:\Users\ds13\AppData\Local\Programs\oh-my-posh\bin",
     "C:\Users\Александр\AppData\Roaming\npm",
-    "E:\Scripts\EleDo"
+    "E:\Scripts\EleDo",
+
+    "C:\Users\ds13\go\bin"
 )
 $Env:Path = $PathItems -join [IO.Path]::PathSeparator
 # - Default editor.
