@@ -70,3 +70,15 @@ Export-ModuleMember -Alias pipi, piprm
 
 Export-ModuleMember -Function Pip_*
 
+$preferredCellFormat = 'percent'
+function Convert-JuText() {
+    param([Parameter()]$name)
+
+    jupytext --to "py:$preferredCellFormat" $name
+}
+Set-Alias jutextconvert Convert-JuText
+
+Export-ModuleMember -Alias jutextconvert
+
+Export-ModuleMember -Function Convert-JuText
+
