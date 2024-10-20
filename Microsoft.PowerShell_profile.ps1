@@ -218,29 +218,6 @@ function Get-CommandExists {
 
     return $(Get-Command $commandName).Length
 }
-
-function Is-Directory {
-    [OutputType([boolean])]
-    param([Parameter(Mandatory)]$fileName)
-
-    return ($(Get-Item $fileName) -is [System.IO.DirectoryInfo])
-}
-
-function Is-File {
-    [OutputType([boolean])]
-    param([Parameter(Mandatory)]$fileName)
-
-    return ($(Get-Item $fileName) -is [System.IO.FileInfo])
-}
-
-# General.
-# From "C:\Test\Logs\Pass1.log" we get "Logs" - directory name of the file.
-function Get-DirectoryName {
-    param($path)
-
-    return Split-Path -Leaf (Split-Path -Parent $path)
-}
-
 #function Head ($count) {
 #  cat 
 #}
