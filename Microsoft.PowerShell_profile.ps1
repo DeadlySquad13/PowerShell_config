@@ -174,6 +174,15 @@ Import-Module FileSystem
     }
 
     return & $browserExecutable $searchResult
+# # Navigation
+Import-Module Navigation
+
+# * Broot for powershell.
+# Not sure if this part can be contained in 'Navigation/Broot' module.
+# https://github.com/Canop/broot/issues/159
+$isDotSourced = $MyInvocation.InvocationName -eq '.' -or $MyInvocation.Line -eq ''
+if (-not $isDotSourced) {
+    br $args
 }
 
 # # InfoField.
