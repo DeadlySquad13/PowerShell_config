@@ -11,6 +11,11 @@
       "alignment": "left",
       "segments": [
         {
+          "type": "text",
+          "style": "plain",
+          "template": "{{ .Env.OSC7 }}"
+        },
+        {
           "background": "p:ivory",
           "foreground": "black",
           "leading_diamond": "\ue0b6",
@@ -180,6 +185,5 @@
   ],
   "console_title_template": "{{ .Shell }} in {{ .Folder }}",
   "final_space": true,
-  "pwd": "osc7",
   "version": 2
 }
