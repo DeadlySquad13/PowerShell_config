@@ -1,8 +1,17 @@
-# Variables
+# Variables.
 $Env:BookmarksPath = "$HOME\.bookmarks"
 $Env:CDPATH = "$Env:BookmarksPath"
 $Env:PSModules = $Env:PSModulePath.split(';')[0]
 
+# HuggingFace place for personal models and token.
+$Env:HF_HOME = "S:\ds13\Soft\HuggingFace"
+$HF_HOME = "S:\ds13\Soft\HuggingFace"
+$Env:HOME = "C:\Users\ds13"
+
+# Sourcegraph settings.
+$Env:SRC_ENDPOINT = "https://sourcegraph.com"
+
+$Env:YAZI_FILE_ONE = "J:\ds13\Soft\-scoop\apps\git\current\usr\bin\file.exe"
 # Settings.
 # - Path Environment Variable.
 $WindowsEssentials = (
