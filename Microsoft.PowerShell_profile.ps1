@@ -130,9 +130,23 @@ $Env:EDITOR = "nvim"
 
 # - Terminal Icons.
 Import-Module -Name Terminal-Icons
-Set-TerminalIconsTheme -ColorTheme 'devblackops_light'
+Set-TerminalIconsTheme -ColorTheme 'devblackops_light' # Nice with DeadlyAtelierSulphurpoolLight
 
 # - Posh (pretty prompt).
+function Set-EnvVar
+{
+  $p = $executionContext.SessionState.Path.CurrentLocation
+  $osc7 = ""
+  if ($p.Provider.Name -eq "FileSystem")
+  {
+    $ansi_escape = [char]27
+    $provider_path = $p.ProviderPath -Replace "\\", "/"
+    $osc7 = "$ansi_escape]7;file://${env:COMPUTERNAME}/${provider_path}${ansi_escape}\"
+  }
+  $env:OSC7=$osc7
+}
+
+New-Alias -Name 'Set-PoshContext' -Value 'Set-EnvVar' -Scope Global -Force
 $OhMyPoshConfigPath = Join-Path -Path $Env:PSModules -ChildPath 'OhMyPosh'
 $OhMyPoshTheme = Join-Path -Path $OhMyPoshConfigPath -ChildPath 'DeadlyAtelierSulphurpoolLight.omp.json'
 
