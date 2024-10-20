@@ -42,75 +42,103 @@ $WebDevelopment = (
     "E:\soft\Node.js\"
 )
 
-$Applied = (
-    "E:\soft\Calibre (Editing Epub files\",
-    "C:\Program Files (x86)\ffmpeg\bin",
-    "C:\Program Files\Sourcegraph",
-    "$Env:HOME\.local\bin" # For pipx.
+$Python = (
+    "C:\Users\ds13\AppData\Roaming\Python\Python310\Scripts",
+    "C:\Users\ds13\scoop\apps\python310\current\Scripts",
+    # "C:\Users\Александр\.windows-build-tools\python27\",
+    "C:\Users\ds13\scoop\apps\python310\current"
 )
 
-$PathItems = $WindowsEssentials + $VisualStudioCode + $WebDevelopment + (
-    "E:\Archive\Installers\Soft\Programming\Vcpkg\installed\x64-windows-static\lib",
-    "E:\Archive\Installers\Soft\Programming\Vcpkg\installed\x64-windows-static\include",
-    "C:\Program Files\PowerShell\7-preview",
+$Java = (
     # "C:\Program Files\Common Files\Oracle\Java\javapath",
     # "C:\Program Files (x86)\Common Files\Oracle\Java\javapath",
     # "C:\Program Files (x86)\Common Files\Oracle\Java\javapath",
     # "C:\ProgramData\Oracle\Java\javapath",
     # "C:\Program Files\Java\jdk-14\bin",
-    "C:\Program Files\BellSoft\LibericaJDK-8\bin",
-    "C:\Program Files (x86)\Razer Chroma SDK\bin",
-    "C:\Program Files\Razer Chroma SDK\bin",
-    "C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common",
-    "C:\Program Files\MySQL\MySQL Utilities 1.6\",
-    "C:\Program Files\Microsoft\Web Platform Installer\",
-    "C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\",
+    "C:\Program Files\BellSoft\LibericaJDK-8\bin"
+)
+
+# Not used.
+$MicrosoftSql = (
     "C:\Program Files\Microsoft SQL Server\110\Tools\Binn\",
     "C:\Program Files\Microsoft SQL Server\120\Tools\Binn\",
-    "C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR",
     "C:\Program Files\Microsoft SQL Server\130\Tools\Binn\",
     "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\",
-    "C:\Program Files (x86)\IncrediBuild",
-    "E:\soft\Graphics Editors\QuickTime\QTSystem\",
-    "C:\Program Files\dotnet\",
     "C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\",
-    "C:\Program Files\Azure Data Studio\bin",
     "C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\",
     "C:\Program Files\Microsoft SQL Server\150\Tools\Binn\",
-    "C:\Program Files\Microsoft SQL Server\150\DTS\Binn\",
-    "C:\Program Files\PuTTY\",
-    "C:\Program Files\Cloudflare\Cloudflare WARP\",
-    "E:\soft\DevOps\Services__Amazon\",
-    "C:\Program Files\Neovim\bin",
-    "C:\Program Files (x86)\dotnet\",
-    "C:\Program Files\PowerShell\7-preview\preview",
-    "C:\Program Files\Docker\Docker\resources\bin",
-    "C:\ProgramData\DockerDesktop\version-bin",
+    "C:\Program Files\Microsoft SQL Server\150\DTS\Binn\"
+)
 
-    "C:\Users\ds13\AppData\Roaming\Python\Python310\Scripts",
-    "C:\Users\ds13\scoop\apps\python310\current\Scripts",
-    "C:\Users\ds13\scoop\apps\python310\current",
-    "C:\Users\ds13\scoop\apps\rustup-msvc\current\.cargo\bin",
-    "C:\Users\ds13\scoop\apps\mingw\current\bin",
+# Not used.
+$Nvidia = (
+    "C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR",
+    "C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common"
+)
 
+# Not used.
+$Perl = (
     "C:\Users\ds13\scoop\apps\perl\current\perl\site\bin",
     "C:\Users\ds13\scoop\apps\perl\current\perl\bin",
-    "C:\Users\ds13\scoop\apps\perl\current\c\bin",
+    "C:\Users\ds13\scoop\apps\perl\current\c\bin"
+)
+
+# Not used.
+$Rust = (
+    "C:\Users\ds13\scoop\apps\rustup-msvc\current\.cargo\bin"
+)
+
+# Not used.
+$Drivers = (
+    "C:\Program Files (x86)\Razer Chroma SDK\bin",
+    "C:\Program Files\Razer Chroma SDK\bin"
+)
+
+# Not used.
+$MicrosoftDevelopment = (
+    "C:\Program Files\Microsoft\Web Platform Installer\",
+    "C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\",
+    "C:\Program Files (x86)\IncrediBuild",
+    "C:\Program Files\Azure Data Studio\bin",
+    "C:\Program Files\PuTTY\",
+    "C:\Program Files\dotnet\",
+    "C:\Program Files (x86)\dotnet\"
+)
+
+# Not used.
+$Applied = (
+    "E:\soft\Calibre (Editing Epub files\",
+    "C:\Program Files (x86)\ffmpeg\bin",
+    "C:\Program Files\Sourcegraph",
+    # "C:\Users\ds13\scoop\apps\mingw\current\bin",
+    # "C:\Program Files\GoodSync",
+    # "C:\Program Files (x86)\VirtuaWin",
+    # "E:\soft\DevOps\Services__Amazon",
+    # "C:\Users\Александр\AppData\Local\Programs\Microsoft VS Code\bin",
+    # "E:\Archive\Installers\Soft\Applied\Programming\FVim",
+    # "E:\soft\JetBrains\JetBrains PyCharm Professional\JetBrains PyCharm Professional 2019.2.4\bin",
+    "$Env:HOME\.local\bin" # For pipx.
+)
+
+$PathItems = $WindowsEssentials + $VisualStudioCode + $WebDevelopment + $Python + $Java + (
+    "E:\Archive\Installers\Soft\Programming\Vcpkg\installed\x64-windows-static\lib",
+    "E:\Archive\Installers\Soft\Programming\Vcpkg\installed\x64-windows-static\include",
+
+    # "C:\Program Files\MySQL\MySQL Utilities 1.6\",
+
+    # "E:\soft\Graphics Editors\QuickTime\QTSystem\",
+    # "C:\Program Files\Cloudflare\Cloudflare WARP\",
+    "E:\soft\DevOps\Services__Amazon\",
+    "C:\ProgramData\DockerDesktop\version-bin",
 
     "C:\Users\ds13\scoop\apps\oh-my-posh\current\bin",
-    "C:\Users\ds13\scoop\apps\gcc\current\bin",
+    # "C:\Users\ds13\scoop\apps\gcc\current\bin",
     "C:\Users\ds13\scoop\shims",
     "C:\ProgramData\Microsoft\Windows\Start Menu\Programs",
-    "C:\Users\Александр\.windows-build-tools\python27\",
-    "E:\soft\JetBrains\JetBrains PyCharm Professional\JetBrains PyCharm Professional 2019.2.4\bin",
-    "C:\Program Files (x86)\VirtuaWin",
-    "E:\soft\DevOps\Services__Amazon",
-    "C:\Users\Александр\AppData\Local\Programs\Microsoft VS Code\bin",
-    "E:\Archive\Installers\Soft\Applied\Programming\FVim",
     "C:\Users\ds13\AppData\Local\Microsoft\WindowsApps\",
-    "C:\Program Files\PowerShell\7-preview",
+    # "C:\Program Files\PowerShell\7-preview\preview",
+    # "C:\Program Files\PowerShell\7-preview",
     "C:\Program Files\Docker\Docker\resources\bin",
-    "C:\Program Files\GoodSync",
     "C:\Users\Александр\AppData\Roaming\Microsoft\Windows\Start Menu\Programs",
     "C:\Users\ds13\AppData\Local\Programs\oh-my-posh\bin",
     "C:\Users\Александр\AppData\Roaming\npm",
@@ -118,6 +146,7 @@ $PathItems = $WindowsEssentials + $VisualStudioCode + $WebDevelopment + (
 
     "C:\Users\ds13\go\bin",
     
+    "C:\Program Files\Neovim\bin",
     "C:\Users\ds13\AppData\Local\nvim-data\mason\bin"
 )
 
