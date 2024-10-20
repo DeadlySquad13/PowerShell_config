@@ -167,13 +167,13 @@ Import-Module PowershellReadLine
 # # Utilities.
 Import-Module PowershellSystem
 Import-Module FileSystem
+Import-Module EnvManagement
 
-    $browserExecutable = "Chrome"
-    if ($(Get-DirectoryName $searchResult) -eq "Opera") {
-        $browserExecutable = "Opera"
-    }
+Set-Alias cd Set-LocationWithCdPath -Force -Option AllScope # Is not exported. More likely as it overrides cd.
+Import-Module PythonDevelopment
+Import-Module Testing # Currently only for palette testing (Show-ColorPalette).
+Import-Module ProjectInfo
 
-    return & $browserExecutable $searchResult
 # # Navigation
 Import-Module Navigation
 
