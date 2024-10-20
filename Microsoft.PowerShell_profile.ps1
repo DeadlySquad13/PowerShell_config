@@ -195,6 +195,9 @@ Import-Module Music 3>$null # Contains some non-approved verbs.
 # # Package Management.
 Import-Module PackageManagement 3>$null # Contains some non-approved verbs.
 
+# # VirtualBox.
+Import-Module VirtualBox 3>$null # Contains some non-approved verbs.
+
 Import-Module ProjectInfo
 
 # Aliases.
