@@ -158,6 +158,12 @@ oh-my-posh init pwsh --config "$OhMyPoshTheme" | Invoke-Expression
 #  cat 
 #}
 
+# To create a new module:
+#   New-ModuleManifest -Path $(Join-Path -Path $Env:PSModules -ChildPath Try1/Try1.psd1) -Description "Try1"
+# And then fill info in it.
+#   To check what you've got: `Get-Module -ListAvailable`
+Import-Module PowershellReadLine
+
 
     $browserExecutable = "Chrome"
     if ($(Get-DirectoryName $searchResult) -eq "Opera") {
