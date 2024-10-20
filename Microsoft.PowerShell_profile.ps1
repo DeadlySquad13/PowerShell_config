@@ -158,19 +158,6 @@ oh-my-posh init pwsh --config "$OhMyPoshTheme" | Invoke-Expression
 #  cat 
 #}
 
-# KbdBuff Seraching.
-function Invoke-FuzzyOpenInBrowser {
-    param(
-        [Parameter(Mandatory)]
-        $options
-        # [switch]$browser
-    )
-
-    $searchResult = Invoke-PsFzfRipgrep $options -NoEditor
-
-    if (-not $searchResult) {
-        return
-    }
 
     $browserExecutable = "Chrome"
     if ($(Get-DirectoryName $searchResult) -eq "Opera") {
