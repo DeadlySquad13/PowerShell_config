@@ -212,6 +212,37 @@ function avi() {
     Start-Process -WindowStyle Hidden alacritty -ArgumentList "--title", $title, "-e", "nvim ${params}"
 }
 
+function avilog() {
+    [OutputType([System.Diagnostics.Process])]
+    param([Parameter()]$params)
+
+    $title = 'NeoVim'
+    # FileSystemInfo is a base class for files and directories
+    #   [docs](https://learn.microsoft.com/en-us/dotnet/api/system.io.filesysteminfo?view=net-7.0)
+    if ($params -and ($(Get-Item $params) -is [System.IO.FileSystemInfo])) {
+        # $title = "$params - $title"
+        $title = "$params"
+    }
+
+    Start-Process -WindowStyle Hidden alacritty -ArgumentList "--title", $title, "-e", "nvim --startuptime perf.log ${params}"
+}
+
+# Launch with servername to listen.
+function aviju() {
+    [OutputType([System.Diagnostics.Process])]
+    param([Parameter()]$params)
+
+    $title = 'NeoVim'
+    # FileSystemInfo is a base class for files and directories
+    #   [docs](https://learn.microsoft.com/en-us/dotnet/api/system.io.filesysteminfo?view=net-7.0)
+    if ($params -and ($(Get-Item $params) -is [System.IO.FileSystemInfo])) {
+        # $title = "$params - $title"
+        $title = "$params"
+    }
+
+    Start-Process -WindowStyle Hidden alacritty -ArgumentList "--title", $title, "-e", "nvim --listen localhost:18898 ${params}"
+}
+
 function fvi($params) {
     Start-Process -WindowStyle Hidden fvim $params
 }
