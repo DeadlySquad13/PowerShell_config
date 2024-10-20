@@ -154,26 +154,6 @@ $Env:VIRTUAL_ENV_DISABLE_PROMPT=1 # Disable default: we have already one in our 
 oh-my-posh init pwsh --config "$OhMyPoshTheme" | Invoke-Expression
 
 
-# Utility functions.
-function Get-CmdletAlias ($cmdletname) {
-  Get-Alias |
-    Where-Object -FilterScript {$_.Definition -like "$cmdletname"} |
-      Format-Table -Property Definition, Name -AutoSize
-}
-
-function Get-ModuleExists {
-    [OutputType([boolean])]
-    param([Parameter(Mandatory)]$moduleName)
-
-    return $(Get-Module -ListAvailable -Name $moduleName).Length
-}
-
-function Get-CommandExists {
-    [OutputType([boolean])]
-    param([Parameter(Mandatory)]$commandName)
-
-    return $(Get-Command $commandName).Length
-}
 #function Head ($count) {
 #  cat 
 #}
