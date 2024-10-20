@@ -12,6 +12,7 @@ $Env:HOME = "C:\Users\ds13"
 $Env:SRC_ENDPOINT = "https://sourcegraph.com"
 
 $Env:YAZI_FILE_ONE = "J:\ds13\Soft\-scoop\apps\git\current\usr\bin\file.exe"
+
 # Settings.
 # - Path Environment Variable.
 $WindowsEssentials = (
@@ -43,13 +44,15 @@ $WebDevelopment = (
 
 $Applied = (
     "E:\soft\Calibre (Editing Epub files\",
-    "C:\Program Files (x86)\ffmpeg\bin"
+    "C:\Program Files (x86)\ffmpeg\bin",
+    "C:\Program Files\Sourcegraph",
+    "$Env:HOME\.local\bin" # For pipx.
 )
 
 $PathItems = $WindowsEssentials + $VisualStudioCode + $WebDevelopment + (
+    "E:\Archive\Installers\Soft\Programming\Vcpkg\installed\x64-windows-static\lib",
+    "E:\Archive\Installers\Soft\Programming\Vcpkg\installed\x64-windows-static\include",
     "C:\Program Files\PowerShell\7-preview",
-    "C:\Users\Александр\AppData\Local\Programs\Python\Python38\Scripts\",
-    "C:\Users\Александр\AppData\Local\Programs\Python\Python38\",
     # "C:\Program Files\Common Files\Oracle\Java\javapath",
     # "C:\Program Files (x86)\Common Files\Oracle\Java\javapath",
     # "C:\Program Files (x86)\Common Files\Oracle\Java\javapath",
@@ -69,7 +72,6 @@ $PathItems = $WindowsEssentials + $VisualStudioCode + $WebDevelopment + (
     "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\",
     "C:\Program Files (x86)\IncrediBuild",
     "E:\soft\Graphics Editors\QuickTime\QTSystem\",
-    "E:\soft\GitForWindows\Git\cmd",
     "C:\Program Files\dotnet\",
     "C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\",
     "C:\Program Files\Azure Data Studio\bin",
@@ -114,9 +116,15 @@ $PathItems = $WindowsEssentials + $VisualStudioCode + $WebDevelopment + (
     "C:\Users\Александр\AppData\Roaming\npm",
     "E:\Scripts\EleDo",
 
-    "C:\Users\ds13\go\bin"
+    "C:\Users\ds13\go\bin",
+    
+    "C:\Users\ds13\AppData\Local\nvim-data\mason\bin"
 )
-$Env:Path = $PathItems -join [IO.Path]::PathSeparator
+
+$User = [EnvironmentVariableTarget]::User
+$SystemWidePath = [Environment]::GetEnvironmentVariable('Path', $User)
+
+$Env:Path = "$SystemWidePath;" + $($PathItems -join [IO.Path]::PathSeparator)
 # - Default editor.
 $Env:EDITOR = "nvim"
 # - Bash-like completion
