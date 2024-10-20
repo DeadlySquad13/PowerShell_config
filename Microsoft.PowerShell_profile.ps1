@@ -198,11 +198,13 @@ Import-Module PackageManagement 3>$null # Contains some non-approved verbs.
 # # VirtualBox.
 Import-Module VirtualBox 3>$null # Contains some non-approved verbs.
 
+# # ProjectInfo.
 Import-Module ProjectInfo
 
-# Aliases.
+# # Aliases.
 Import-Module Aliases
-# - Fzf aliases.
+
+# * Fzf aliases.
 if ($(Get-CommandExists fzf*.exe) -and $(Get-ModuleExists PsFzf)) {
   Set-PsFzfOption -EnableAliasFuzzyEdit # `fe`,
   Set-PsFzfOption -EnableAliasFuzzyHistory # `fh`,
@@ -287,7 +289,6 @@ function New-Note() {
     gvi ${kbdPath}/${fileName}
 }
 
-
 # Templates.
 $Env:TemplatePath="/mnt/e/Projects/--personal/ModuleT/src";
 
@@ -311,4 +312,3 @@ function createModuleThmoon() {
   # tpage $TEMPLATE_PATH/$moduleName/Component.module.css >> \
   # $componentName/$componentName.module.css
 }
-
