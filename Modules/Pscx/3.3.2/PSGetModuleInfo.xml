@@ -1,0 +1,397 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Microsoft.PowerShell.Commands.PSRepositoryItemInfo</T>
+      <T>System.Management.Automation.PSCustomObject</T>
+      <T>System.Object</T>
+    </TN>
+    <MS>
+      <S N="Name">Pscx</S>
+      <Version N="Version">3.3.2</Version>
+      <S N="Type">Module</S>
+      <S N="Description">PowerShell Community Extensions (PSCX) base module which implements a general purpose set of Cmdlets.</S>
+      <S N="Author">PowerShell Community Developers</S>
+      <Obj N="CompanyName" RefId="1">
+        <TN RefId="1">
+          <T>System.Object[]</T>
+          <T>System.Array</T>
+          <T>System.Object</T>
+        </TN>
+        <LST>
+          <S>r_keith_hill</S>
+          <S>x0n</S>
+        </LST>
+      </Obj>
+      <S N="Copyright">Copyright PowerShell Community Developers 2006 - 2018.</S>
+      <DT N="PublishedDate">2018-01-17T02:52:54+03:00</DT>
+      <Obj N="InstalledDate" RefId="2">
+        <DT>2022-12-23T17:40:03.5865174+03:00</DT>
+        <MS>
+          <Obj N="DisplayHint" RefId="3">
+            <TN RefId="2">
+              <T>Microsoft.PowerShell.Commands.DisplayHintType</T>
+              <T>System.Enum</T>
+              <T>System.ValueType</T>
+              <T>System.Object</T>
+            </TN>
+            <ToString>DateTime</ToString>
+            <I32>2</I32>
+          </Obj>
+        </MS>
+      </Obj>
+      <Nil N="UpdatedDate" />
+      <URI N="LicenseUri">https://github.com/Pscx/Pscx/blob/master/LICENSE</URI>
+      <URI N="ProjectUri">https://github.com/Pscx/Pscx</URI>
+      <URI N="IconUri">https://github.com/Pscx/Pscx/blob/master/PscxIcon.png?raw=true</URI>
+      <Obj N="Tags" RefId="4">
+        <TNRef RefId="1" />
+        <LST>
+          <S>Utilities</S>
+          <S>Xml</S>
+          <S>Zip</S>
+          <S>Clipboard</S>
+          <S>Base64</S>
+          <S>ShortPath</S>
+          <S>PEHeader</S>
+          <S>CD</S>
+          <S>PSModule</S>
+        </LST>
+      </Obj>
+      <Obj N="Includes" RefId="5">
+        <TN RefId="3">
+          <T>System.Collections.Hashtable</T>
+          <T>System.Object</T>
+        </TN>
+        <DCT>
+          <En>
+            <S N="Key">Cmdlet</S>
+            <Obj N="Value" RefId="6">
+              <TNRef RefId="1" />
+              <LST>
+                <S>Add-PathVariable</S>
+                <S>Clear-MSMQueue</S>
+                <S>ConvertFrom-Base64</S>
+                <S>ConvertTo-Base64</S>
+                <S>ConvertTo-MacOs9LineEnding</S>
+                <S>ConvertTo-Metric</S>
+                <S>ConvertTo-UnixLineEnding</S>
+                <S>ConvertTo-WindowsLineEnding</S>
+                <S>Convert-Xml</S>
+                <S>Disconnect-TerminalSession</S>
+                <S>Edit-File</S>
+                <S>Expand-Archive</S>
+                <S>Export-Bitmap</S>
+                <S>Format-Byte</S>
+                <S>Format-Hex</S>
+                <S>Format-Xml</S>
+                <S>Get-ADObject</S>
+                <S>Get-AdoConnection</S>
+                <S>Get-AdoDataProvider</S>
+                <S>Get-Clipboard</S>
+                <S>Get-DhcpServer</S>
+                <S>Get-DomainController</S>
+                <S>Get-DriveInfo</S>
+                <S>Get-EnvironmentBlock</S>
+                <S>Get-FileTail</S>
+                <S>Get-FileVersionInfo</S>
+                <S>Get-ForegroundWindow</S>
+                <S>Get-Hash</S>
+                <S>Get-HttpResource</S>
+                <S>Get-LoremIpsum</S>
+                <S>Get-MountPoint</S>
+                <S>Get-MSMQueue</S>
+                <S>Get-OpticalDriveInfo</S>
+                <S>Get-PathVariable</S>
+                <S>Get-PEHeader</S>
+                <S>Get-Privilege</S>
+                <S>Get-PSSnapinHelp</S>
+                <S>Get-ReparsePoint</S>
+                <S>Get-RunningObject</S>
+                <S>Get-ShortPath</S>
+                <S>Get-TerminalSession</S>
+                <S>Get-TypeName</S>
+                <S>Get-Uptime</S>
+                <S>Import-Bitmap</S>
+                <S>Invoke-AdoCommand</S>
+                <S>Invoke-Apartment</S>
+                <S>Join-String</S>
+                <S>New-Hardlink</S>
+                <S>New-Junction</S>
+                <S>New-MSMQueue</S>
+                <S>New-Shortcut</S>
+                <S>New-Symlink</S>
+                <S>Out-Clipboard</S>
+                <S>Ping-Host</S>
+                <S>Pop-EnvironmentBlock</S>
+                <S>Push-EnvironmentBlock</S>
+                <S>Read-Archive</S>
+                <S>Receive-MSMQueue</S>
+                <S>Remove-MountPoint</S>
+                <S>Remove-ReparsePoint</S>
+                <S>Resolve-Host</S>
+                <S>Send-MSMQueue</S>
+                <S>Send-SmtpMail</S>
+                <S>Set-BitmapSize</S>
+                <S>Set-Clipboard</S>
+                <S>Set-FileTime</S>
+                <S>Set-ForegroundWindow</S>
+                <S>Set-PathVariable</S>
+                <S>Set-Privilege</S>
+                <S>Set-VolumeLabel</S>
+                <S>Skip-Object</S>
+                <S>Split-String</S>
+                <S>Stop-TerminalSession</S>
+                <S>Test-AlternateDataStream</S>
+                <S>Test-Assembly</S>
+                <S>Test-MSMQueue</S>
+                <S>Test-Script</S>
+                <S>Test-UserGroupMembership</S>
+                <S>Test-Xml</S>
+                <S>Write-BZip2</S>
+                <S>Write-Clipboard</S>
+                <S>Write-GZip</S>
+                <S>Write-Tar</S>
+                <S>Write-Zip</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Workflow</S>
+            <Obj N="Value" RefId="7">
+              <TNRef RefId="1" />
+              <LST />
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Function</S>
+            <Obj N="Value" RefId="8">
+              <TNRef RefId="1" />
+              <LST>
+                <S>Add-DirectoryLength</S>
+                <S>Add-ShortPath</S>
+                <S>Edit-Profile</S>
+                <S>Edit-HostProfile</S>
+                <S>Enable-OpenPowerShellHere</S>
+                <S>Get-ExecutionTime</S>
+                <S>Get-Help</S>
+                <S>Get-Parameter</S>
+                <S>Get-PropertyValue</S>
+                <S>Get-ScreenCss</S>
+                <S>Get-ScreenHtml</S>
+                <S>Get-ViewDefinition</S>
+                <S>help</S>
+                <S>Import-VisualStudioVars</S>
+                <S>Invoke-BatchFile</S>
+                <S>Invoke-Elevated</S>
+                <S>Invoke-GC</S>
+                <S>Invoke-Method</S>
+                <S>Invoke-NullCoalescing</S>
+                <S>Invoke-Ternary</S>
+                <S>less</S>
+                <S>New-HashObject</S>
+                <S>Out-Speech</S>
+                <S>prompt</S>
+                <S>QuoteList</S>
+                <S>QuoteString</S>
+                <S>Resolve-ErrorRecord</S>
+                <S>Resolve-HResult</S>
+                <S>Resolve-WindowsError</S>
+                <S>Search-Transcript</S>
+                <S>Set-Writable</S>
+                <S>Set-ReadOnly</S>
+                <S>Show-Tree</S>
+                <S>Start-PowerShell</S>
+                <S>Stop-RemoteProcess</S>
+                <S>Set-LocationEx</S>
+                <S>Dismount-VHD</S>
+                <S>Mount-VHD</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Command</S>
+            <Obj N="Value" RefId="9">
+              <TNRef RefId="1" />
+              <LST>
+                <S>Add-PathVariable</S>
+                <S>Clear-MSMQueue</S>
+                <S>ConvertFrom-Base64</S>
+                <S>ConvertTo-Base64</S>
+                <S>ConvertTo-MacOs9LineEnding</S>
+                <S>ConvertTo-Metric</S>
+                <S>ConvertTo-UnixLineEnding</S>
+                <S>ConvertTo-WindowsLineEnding</S>
+                <S>Convert-Xml</S>
+                <S>Disconnect-TerminalSession</S>
+                <S>Edit-File</S>
+                <S>Expand-Archive</S>
+                <S>Export-Bitmap</S>
+                <S>Format-Byte</S>
+                <S>Format-Hex</S>
+                <S>Format-Xml</S>
+                <S>Get-ADObject</S>
+                <S>Get-AdoConnection</S>
+                <S>Get-AdoDataProvider</S>
+                <S>Get-Clipboard</S>
+                <S>Get-DhcpServer</S>
+                <S>Get-DomainController</S>
+                <S>Get-DriveInfo</S>
+                <S>Get-EnvironmentBlock</S>
+                <S>Get-FileTail</S>
+                <S>Get-FileVersionInfo</S>
+                <S>Get-ForegroundWindow</S>
+                <S>Get-Hash</S>
+                <S>Get-HttpResource</S>
+                <S>Get-LoremIpsum</S>
+                <S>Get-MountPoint</S>
+                <S>Get-MSMQueue</S>
+                <S>Get-OpticalDriveInfo</S>
+                <S>Get-PathVariable</S>
+                <S>Get-PEHeader</S>
+                <S>Get-Privilege</S>
+                <S>Get-PSSnapinHelp</S>
+                <S>Get-ReparsePoint</S>
+                <S>Get-RunningObject</S>
+                <S>Get-ShortPath</S>
+                <S>Get-TerminalSession</S>
+                <S>Get-TypeName</S>
+                <S>Get-Uptime</S>
+                <S>Import-Bitmap</S>
+                <S>Invoke-AdoCommand</S>
+                <S>Invoke-Apartment</S>
+                <S>Join-String</S>
+                <S>New-Hardlink</S>
+                <S>New-Junction</S>
+                <S>New-MSMQueue</S>
+                <S>New-Shortcut</S>
+                <S>New-Symlink</S>
+                <S>Out-Clipboard</S>
+                <S>Ping-Host</S>
+                <S>Pop-EnvironmentBlock</S>
+                <S>Push-EnvironmentBlock</S>
+                <S>Read-Archive</S>
+                <S>Receive-MSMQueue</S>
+                <S>Remove-MountPoint</S>
+                <S>Remove-ReparsePoint</S>
+                <S>Resolve-Host</S>
+                <S>Send-MSMQueue</S>
+                <S>Send-SmtpMail</S>
+                <S>Set-BitmapSize</S>
+                <S>Set-Clipboard</S>
+                <S>Set-FileTime</S>
+                <S>Set-ForegroundWindow</S>
+                <S>Set-PathVariable</S>
+                <S>Set-Privilege</S>
+                <S>Set-VolumeLabel</S>
+                <S>Skip-Object</S>
+                <S>Split-String</S>
+                <S>Stop-TerminalSession</S>
+                <S>Test-AlternateDataStream</S>
+                <S>Test-Assembly</S>
+                <S>Test-MSMQueue</S>
+                <S>Test-Script</S>
+                <S>Test-UserGroupMembership</S>
+                <S>Test-Xml</S>
+                <S>Write-BZip2</S>
+                <S>Write-Clipboard</S>
+                <S>Write-GZip</S>
+                <S>Write-Tar</S>
+                <S>Write-Zip</S>
+                <S>Add-DirectoryLength</S>
+                <S>Add-ShortPath</S>
+                <S>Edit-Profile</S>
+                <S>Edit-HostProfile</S>
+                <S>Enable-OpenPowerShellHere</S>
+                <S>Get-ExecutionTime</S>
+                <S>Get-Help</S>
+                <S>Get-Parameter</S>
+                <S>Get-PropertyValue</S>
+                <S>Get-ScreenCss</S>
+                <S>Get-ScreenHtml</S>
+                <S>Get-ViewDefinition</S>
+                <S>help</S>
+                <S>Import-VisualStudioVars</S>
+                <S>Invoke-BatchFile</S>
+                <S>Invoke-Elevated</S>
+                <S>Invoke-GC</S>
+                <S>Invoke-Method</S>
+                <S>Invoke-NullCoalescing</S>
+                <S>Invoke-Ternary</S>
+                <S>less</S>
+                <S>New-HashObject</S>
+                <S>Out-Speech</S>
+                <S>prompt</S>
+                <S>QuoteList</S>
+                <S>QuoteString</S>
+                <S>Resolve-ErrorRecord</S>
+                <S>Resolve-HResult</S>
+                <S>Resolve-WindowsError</S>
+                <S>Search-Transcript</S>
+                <S>Set-Writable</S>
+                <S>Set-ReadOnly</S>
+                <S>Show-Tree</S>
+                <S>Start-PowerShell</S>
+                <S>Stop-RemoteProcess</S>
+                <S>Set-LocationEx</S>
+                <S>Dismount-VHD</S>
+                <S>Mount-VHD</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">RoleCapability</S>
+            <Ref N="Value" RefId="7" />
+          </En>
+          <En>
+            <S N="Key">DscResource</S>
+            <Ref N="Value" RefId="7" />
+          </En>
+        </DCT>
+      </Obj>
+      <Nil N="PowerShellGetFormatVersion" />
+      <S N="ReleaseNotes">3.3.2 - January 16, 2018_x000D__x000A__x000D__x000A_* Fix Edit-File does not respect TextEditor property [#48](https://github.com/Pscx/Pscx/issues/48)_x000D__x000A__x000D__x000A_3.3.1 - October 12, 2017_x000D__x000A__x000D__x000A_* Fix Import-VisualStudioVars - Select-VSSetupInstance ignores VS 2017 Build Tools by default [#36](https://github.com/Pscx/Pscx/issues/36)_x000D__x000A_# Fix Import-VisualStudioVars - VS 2015 Build Tools do not have VsDevCmd.bat [#37](https://github.com/Pscx/Pscx/issues/37)_x000D__x000A_# Fix Import-VisualStudioVars fails when workload for VC is not installed [#41](https://github.com/Pscx/Pscx/issues/41)_x000D__x000A__x000D__x000A_3.3.0 - September 5, 2017_x000D__x000A__x000D__x000A_* Fix issues with CD functionality not working on PowerShell Core._x000D__x000A__x000D__x000A_* Updated Import-VisualStudioVars to support Visual Studio 2017.</S>
+      <Obj N="Dependencies" RefId="10">
+        <TNRef RefId="1" />
+        <LST />
+      </Obj>
+      <S N="RepositorySourceLocation">https://www.powershellgallery.com/api/v2</S>
+      <S N="Repository">PSGallery</S>
+      <S N="PackageManagementProvider">NuGet</S>
+      <Obj N="AdditionalMetadata" RefId="11">
+        <TN RefId="4">
+          <T>System.Management.Automation.PSCustomObject</T>
+          <T>System.Object</T>
+        </TN>
+        <MS>
+          <S N="copyright">Copyright PowerShell Community Developers 2006 - 2018.</S>
+          <S N="description">PowerShell Community Extensions (PSCX) base module which implements a general purpose set of Cmdlets.</S>
+          <S N="requireLicenseAcceptance">False</S>
+          <S N="releaseNotes">3.3.2 - January 16, 2018_x000D__x000A__x000D__x000A_* Fix Edit-File does not respect TextEditor property [#48](https://github.com/Pscx/Pscx/issues/48)_x000D__x000A__x000D__x000A_3.3.1 - October 12, 2017_x000D__x000A__x000D__x000A_* Fix Import-VisualStudioVars - Select-VSSetupInstance ignores VS 2017 Build Tools by default [#36](https://github.com/Pscx/Pscx/issues/36)_x000D__x000A_# Fix Import-VisualStudioVars - VS 2015 Build Tools do not have VsDevCmd.bat [#37](https://github.com/Pscx/Pscx/issues/37)_x000D__x000A_# Fix Import-VisualStudioVars fails when workload for VC is not installed [#41](https://github.com/Pscx/Pscx/issues/41)_x000D__x000A__x000D__x000A_3.3.0 - September 5, 2017_x000D__x000A__x000D__x000A_* Fix issues with CD functionality not working on PowerShell Core._x000D__x000A__x000D__x000A_* Updated Import-VisualStudioVars to support Visual Studio 2017.</S>
+          <S N="isLatestVersion">True</S>
+          <S N="isAbsoluteLatestVersion">False</S>
+          <S N="versionDownloadCount">772977</S>
+          <S N="downloadCount">843747</S>
+          <S N="packageSize">2298304</S>
+          <S N="published">17.01.18 2:52:54 AM +03:00</S>
+          <S N="created">17.01.18 2:52:54 AM +03:00</S>
+          <S N="lastUpdated">23.12.22 2:35:24 PM +03:00</S>
+          <S N="tags">Utilities Xml Zip Clipboard Base64 ShortPath PEHeader CD PSModule</S>
+          <S N="developmentDependency">False</S>
+          <S N="updated">2022-12-23T14:35:24Z</S>
+          <S N="NormalizedVersion">3.3.2</S>
+          <S N="Authors">PowerShell Community Developers</S>
+          <S N="IsPrerelease">false</S>
+          <S N="ItemType">Module</S>
+          <S N="FileList">Pscx.nuspec|7z.dll|7z64.dll|about_Pscx.help.txt|ICSharpCode.SharpZipLib.dll|Interop.Microsoft.Feeds.Interop.dll|Microsoft.Management.Infrastructure.dll|PowerCollections.dll|Pscx.Core.dll|Pscx.dll|Pscx.dll-Help.xml|Pscx.psd1|Pscx.psm1|Pscx.UserPreferences.ps1|SevenZipSharp.dll|SoftUni.Wintellect.PowerCollections.dll|System.Management.Automation.dll|Trinet.Core.IO.Ntfs.dll|Apps\COPYING|Apps\EchoArgs.exe|Apps\less.exe|Apps\less.man|Apps\lesskey.exe|Apps\lesskey.man|Apps\LICENSE|Apps\NEWS|Apps\README|FormatData\Pscx.Archive.Format.ps1xml|FormatData\Pscx.Environment.Format.ps1xml|FormatData\Pscx.FeedStore.Format.ps1xml|FormatData\Pscx.Format.ps1xml|FormatData\Pscx.Security.Format.ps1xml|FormatData\Pscx.SIUnits.Format.ps1xml|FormatData\Pscx.TerminalServices.Format.ps1xml|Modules\CD\Messages.psd1|Modules\CD\Pscx.CD.psm1|Modules\DirectoryServices\Pscx.DirectoryServices.Format.ps1xml|Modules\DirectoryServices\Pscx.DirectoryServices.psd1|Modules\DirectoryServices\Pscx.DirectoryServices.Type.ps1xml|Modules\FileSystem\Pscx.FileSystem.Format.5.0.ps1xml|Modules\FileSystem\Pscx.FileSystem.Format.ps1xml|Modules\FileSystem\Pscx.FileSystem.psd1|Modules\FileSystem\Pscx.FileSystem.psm1|Modules\FileSystem\Pscx.FileSystem.Type.ps1xml|Modules\GetHelp\Pscx.GetHelp.psm1|Modules\Net\Pscx.Net.Format.ps1xml|Modules\Net\Pscx.Net.psd1|Modules\Net\Pscx.Net.Type.ps1xml|Modules\Prompt\Pscx.Prompt.psm1|Modules\Prompt\Themes\Jachym.ps1|Modules\Prompt\Themes\Modern.ps1|Modules\Prompt\Themes\WinXP.ps1|Modules\TranscribeSession\Pscx.TranscribeSession.psm1|Modules\Utility\Pscx.Utility.Format.ps1xml|Modules\Utility\Pscx.Utility.psd1|Modules\Utility\Pscx.Utility.psm1|Modules\Vhd\Pscx.Vhd.psm1|Modules\Wmi\Pscx.Wmi.psm1|TypeData\Pscx.Archive.Type.ps1xml|TypeData\Pscx.FeedStore.Type.ps1xml|TypeData\Pscx.Reflection.Type.ps1xml|TypeData\Pscx.SIUnits.Type.ps1xml|TypeData\Pscx.TerminalServices.Type.ps1xml|TypeData\Pscx.Wmi.Type.ps1xml</S>
+          <S N="Cmdlets">Add-PathVariable Clear-MSMQueue ConvertFrom-Base64 ConvertTo-Base64 ConvertTo-MacOs9LineEnding ConvertTo-Metric ConvertTo-UnixLineEnding ConvertTo-WindowsLineEnding Convert-Xml Disconnect-TerminalSession Edit-File Expand-Archive Export-Bitmap Format-Byte Format-Hex Format-Xml Get-ADObject Get-AdoConnection Get-AdoDataProvider Get-Clipboard Get-DhcpServer Get-DomainController Get-DriveInfo Get-EnvironmentBlock Get-FileTail Get-FileVersionInfo Get-ForegroundWindow Get-Hash Get-HttpResource Get-LoremIpsum Get-MountPoint Get-MSMQueue Get-OpticalDriveInfo Get-PathVariable Get-PEHeader Get-Privilege Get-PSSnapinHelp Get-ReparsePoint Get-RunningObject Get-ShortPath Get-TerminalSession Get-TypeName Get-Uptime Import-Bitmap Invoke-AdoCommand Invoke-Apartment Join-String New-Hardlink New-Junction New-MSMQueue New-Shortcut New-Symlink Out-Clipboard Ping-Host Pop-EnvironmentBlock Push-EnvironmentBlock Read-Archive Receive-MSMQueue Remove-MountPoint Remove-ReparsePoint Resolve-Host Send-MSMQueue Send-SmtpMail Set-BitmapSize Set-Clipboard Set-FileTime Set-ForegroundWindow Set-PathVariable Set-Privilege Set-VolumeLabel Skip-Object Split-String Stop-TerminalSession Test-AlternateDataStream Test-Assembly Test-MSMQueue Test-Script Test-UserGroupMembership Test-Xml Write-BZip2 Write-Clipboard Write-GZip Write-Tar Write-Zip</S>
+          <S N="Functions">Add-DirectoryLength Add-ShortPath Edit-Profile Edit-HostProfile Enable-OpenPowerShellHere Get-ExecutionTime Get-Help Get-Parameter Get-PropertyValue Get-ScreenCss Get-ScreenHtml Get-ViewDefinition help Import-VisualStudioVars Invoke-BatchFile Invoke-Elevated Invoke-GC Invoke-Method Invoke-NullCoalescing Invoke-Ternary less New-HashObject Out-Speech prompt QuoteList QuoteString Resolve-ErrorRecord Resolve-HResult Resolve-WindowsError Search-Transcript Set-Writable Set-ReadOnly Show-Tree Start-PowerShell Stop-RemoteProcess Set-LocationEx Dismount-VHD Mount-VHD</S>
+          <S N="GUID">0fab0d39-2f29-4e79-ab9a-fd750c66e6c5</S>
+          <S N="PowerShellVersion">3.0</S>
+          <S N="CLRVersion">4.0</S>
+          <S N="CompanyName">http://pscx.codeplex.com/</S>
+        </MS>
+      </Obj>
+      <S N="InstalledLocation">C:\Users\ds13\Documents\PowerShell\Modules\Pscx\3.3.2</S>
+    </MS>
+  </Obj>
+</Objs>
