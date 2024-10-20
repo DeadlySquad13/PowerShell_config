@@ -164,6 +164,9 @@ oh-my-posh init pwsh --config "$OhMyPoshTheme" | Invoke-Expression
 #   To check what you've got: `Get-Module -ListAvailable`
 Import-Module PowershellReadLine
 
+# # Utilities.
+Import-Module PowershellSystem
+Import-Module FileSystem
 
     $browserExecutable = "Chrome"
     if ($(Get-DirectoryName $searchResult) -eq "Opera") {
@@ -173,16 +176,9 @@ Import-Module PowershellReadLine
     return & $browserExecutable $searchResult
 }
 
-# function Invoke-FuzzyOpenInOpera($options) {
-#     "C:\Users\Александр\AppData\Local\Programs\Opera\launcher.exe" $(Invoke-PsFzfRipgrep $options -NoEditor)
-# }
+# # InfoField.
+Import-Module InfoField
 
-# Utilities.
-Import-Module EnvManagement
-Import-Module Navigation
-Set-Alias cd Set-LocationWithCdPath -Force -Option AllScope # Is not exported. More likely as it overrides cd.
-Import-Module PythonDevelopment
-Import-Module Testing # Currently only for palette testing (Show-ColorPalette).
 Import-Module ProjectInfo
 
 # Aliases.
