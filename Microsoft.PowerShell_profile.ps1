@@ -179,6 +179,10 @@ Import-Module FileSystem
 # # InfoField.
 Import-Module InfoField
 
+# # Music.
+$Env:MusicFolder = "M:/Videos__Music"
+Import-Module Music 3>$null # Contains some non-approved verbs.
+
 Import-Module ProjectInfo
 
 # Aliases.
