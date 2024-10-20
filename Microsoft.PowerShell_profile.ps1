@@ -341,3 +341,5 @@ function createModuleThmoon() {
   # tpage $TEMPLATE_PATH/$moduleName/Component.module.css >> \
   # $componentName/$componentName.module.css
 }
+
+Invoke-Expression (& { (zoxide init powershell --cmd j | Out-String) })
