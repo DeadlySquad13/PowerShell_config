@@ -7,14 +7,14 @@ function Is-Directory {
 
 Export-ModuleMember -Function Is-Directory
 
-function Is-File {
+function Test-IsFile {
     [OutputType([boolean])]
     param([Parameter(Mandatory)]$fileName)
 
     return ($(Get-Item $fileName) -is [System.IO.FileInfo])
 }
 
-Export-ModuleMember -Function Is-File
+Export-ModuleMember -Function Test-IsFile
 
 # From "C:\Test\Logs\Pass1.log" we get "Logs" - directory name of the file.
 function Get-DirectoryName {
@@ -24,14 +24,3 @@ function Get-DirectoryName {
 }
 
 Export-ModuleMember -Function Get-DirectoryName
-
-# function Get-Head {
-#     # param(
-#     #     [Parameter(Mandatory)]$path
-#     #     [Parameter(Mandatory=$false)] [int]$count = 10
-#     # )
-
-#     return Get-Content -head 10 ./services.bat
-# }
-
-# Export-ModuleMember -Function Get-Head

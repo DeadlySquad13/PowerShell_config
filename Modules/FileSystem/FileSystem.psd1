@@ -66,10 +66,10 @@ Copyright = '(c) ds13. All rights reserved.'
 # FormatsToProcess = @()
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-NestedModules = @('FileSystem1')
+NestedModules = @('Paths', 'Content')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @('Is-Directory', 'Is-File', 'Get-DirectoryName', 'Get-Head')
+FunctionsToExport = @('Test-IsDirectory', 'Test-IsFile', 'Get-DirectoryName', 'Get-Head')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
