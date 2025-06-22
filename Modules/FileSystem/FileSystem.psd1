@@ -12,13 +12,13 @@
 # RootModule = ''
 
 # Version number of this module.
-ModuleVersion = '0.0.1'
+ModuleVersion = '0.1.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
 
 # ID used to uniquely identify this module
-GUID = 'ce88f941-8d02-4870-a607-6b9a587d160c'
+GUID = '6412e0e4-e7ff-4f0c-a5a4-d193c1a6c329'
 
 # Author of this module
 Author = 'ds13'
@@ -66,10 +66,10 @@ Copyright = '(c) ds13. All rights reserved.'
 # FormatsToProcess = @()
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-# NestedModules = @()
+NestedModules = @('FileSystem1')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @('Is-Directory', 'Is-File', 'Get-DirectoryName')
+FunctionsToExport = @('Is-Directory', 'Is-File', 'Get-DirectoryName', 'Get-Head')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()

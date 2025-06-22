@@ -24,3 +24,14 @@ function Get-DirectoryName {
 }
 
 Export-ModuleMember -Function Get-DirectoryName
+
+# function Get-Head {
+#     # param(
+#     #     [Parameter(Mandatory)]$path
+#     #     [Parameter(Mandatory=$false)] [int]$count = 10
+#     # )
+
+#     return Get-Content -head 10 ./services.bat
+# }
+
+# Export-ModuleMember -Function Get-Head
