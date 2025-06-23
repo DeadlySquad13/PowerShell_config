@@ -146,9 +146,10 @@ $PathItems = $WindowsEssentials + $VisualStudioCode + $WebDevelopment + $Python 
     "E:\soft\DevOps\Services__Amazon\",
     "C:\ProgramData\DockerDesktop\version-bin",
 
-    "C:\Users\ds13\scoop\apps\oh-my-posh\current\bin",
+    # "C:\Users\ds13\scoop\apps\oh-my-posh\current\bin",
     # "C:\Users\ds13\scoop\apps\gcc\current\bin",
-    "C:\Users\ds13\scoop\shims",
+    "J:\ds13\Soft\-scoop\apps\logseq\current",
+    "J:\ds13\Soft\-scoop\shims",
     "C:\ProgramData\Microsoft\Windows\Start Menu\Programs",
     "C:\Users\ds13\AppData\Local\Microsoft\WindowsApps\",
     # "C:\Program Files\PowerShell\7-preview\preview",
