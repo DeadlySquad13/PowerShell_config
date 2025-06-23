@@ -218,6 +218,10 @@ Import-Module PythonDevelopment
 Import-Module Testing # Currently only for palette testing (Show-ColorPalette).
 Import-Module ProjectInfo
 
+# - Enable `gsudo !!`.
+if (Get-CommandExists gsudo) {
+    Import-Module gsudoModule
+}
 # # Navigation
 Import-Module Navigation
 
