@@ -16,3 +16,18 @@ Set-Alias vi-dev nvim
 
 Set-Alias lg lazygit
 
+<#
+.EXAMPLE
+cat file.md | y
+#>
+Set-Alias y Set-Clipboard
+
+<#
+.EXAMPLE
+# Write clipboard contents to file.
+p > file.md
+.EXAMPLE
+# Append clipboard contents to file.
+p >> file.md
+#>
+Set-Alias p Get-Clipboard
