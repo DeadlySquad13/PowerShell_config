@@ -223,6 +223,7 @@ Import-Module ProjectInfo
 if (Get-CommandExists gsudo) {
     Import-Module gsudoModule
 }
+
 # References:
 # https://superuser.com/a/760632, zotero://select/library/items/FWBNEHKA
 function Get-FontFamilies {
@@ -264,6 +265,8 @@ Import-Module Aliases
 
 # * Fzf aliases.
 if ($(Get-CommandExists fzf*.exe) -and $(Get-ModuleExists PsFzf)) {
+  Import-Module PsFzf
+
   Set-PsFzfOption -EnableAliasFuzzyEdit # `fe`,
   Set-PsFzfOption -EnableAliasFuzzyHistory # `fh`,
   Set-PsFzfOption -EnableAliasFuzzySetLocation # `fd`.
