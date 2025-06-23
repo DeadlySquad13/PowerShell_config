@@ -197,6 +197,10 @@ $OhMyPoshTheme = Join-Path -Path $OhMyPoshConfigPath -ChildPath 'DeadlyAtelierSu
 $Env:VIRTUAL_ENV_DISABLE_PROMPT=1 # Disable default: we have already one in our custom prompt.
 oh-my-posh init pwsh --config "$OhMyPoshTheme" | Invoke-Expression
 
+if ($(Get-CommandExists s)) {
+    (& s --completion powershell) | Out-String | Invoke-Expression
+}
+
 
 #function Head ($count) {
 #  cat 
