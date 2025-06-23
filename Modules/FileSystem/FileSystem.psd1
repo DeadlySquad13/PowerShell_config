@@ -69,7 +69,7 @@ Copyright = '(c) ds13. All rights reserved.'
 NestedModules = @('Paths', 'Content')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @('Test-IsDirectory', 'Test-IsFile', 'Get-DirectoryName', 'Get-Head')
+FunctionsToExport = @('Test-IsDirectory', 'Test-IsFile', 'Get-DirectoryName', 'Get-Head', 'Get-Tail')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
