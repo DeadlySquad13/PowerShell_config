@@ -332,8 +332,23 @@ function govi($params) {
     Start-Process -WindowStyle Hidden goneovim $params
 }
 
+$Env:GUI_EDITOR = "neovide"
 # GuiVi stands for currently chosen gui client.
-Set-Alias gvi neovide
+Set-Alias gvi $Env:GUI_EDITOR
+# - Just for the sake of uniformity between Windows and Unix.
+Set-Alias gvi-dev $Env:GUI_EDITOR 
+# # Wsl.
+function gvi-w() {
+    & "$Env:GUI_EDITOR" --wsl
+}
+
+$Env:WSLENV="NVIM_APPNAME"
+function gvi-wdev() {
+    $Env:NVIM_APPNAME="nvim-dev"
+    gvi-w
+    Remove-Item Env:\NVIM_APPNAME
+}
+# Set-Alias gvi-wdev "NVIM_APPNAME=nivm-dev $Env:GUI_EDITOR --wsl"
 
 function Get-IsoDate() {
     (Get-Date -Format "s").replace(':', '_')
