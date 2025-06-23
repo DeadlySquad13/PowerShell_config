@@ -387,3 +387,45 @@ function createModuleThmoon() {
 }
 
 Invoke-Expression (& { (zoxide init powershell --cmd j | Out-String) })
+
+$WslDefaultParameterValues = @{}
+# $WslDefaultParameterValues["grep"] = "-E"
+# $WslDefaultParameterValues["less"] = "-i"
+# $WslDefaultParameterValues["ls"] = "-AFh --group-directories-first" 
+
+# The commands to import.
+$commands = "task", "sed", "awk"
+
+# Helper function to escape characters in arguments passed to WSL that would otherwise be misinterpreted.
+function global:Format-WslArgument([string]$arg, [bool]$interactive) {
+    if ($interactive -and $arg.Contains(" ")) {
+        return "'$arg'"
+    } else {
+        return ($arg -replace " ", "\ ") -replace "([()|])", ('\$1', '`$1')[$interactive]
+    }
+}
+
+# Register a function for each command.
+$commands | ForEach-Object { Invoke-Expression @"
+Remove-Alias $_ -Force -ErrorAction Ignore
+function global:$_() {
+    for (`$i = 0; `$i -lt `$args.Count; `$i++) {
+        # If a path is absolute with a qualifier (e.g. C:), run it through wslpath to map it to the appropriate mount point.
+        if (Split-Path `$args[`$i] -IsAbsolute -ErrorAction Ignore) {
+            `$args[`$i] = Format-WslArgument (wsl.exe wslpath (`$args[`$i] -replace "\\", "/"))
+        # If a path is relative, the current working directory will be translated to an appropriate mount point, so just format it.
+        } elseif (Test-Path `$args[`$i] -ErrorAction Ignore) {
+            `$args[`$i] = Format-WslArgument (`$args[`$i] -replace "\\", "/")
+        }
+    }
+
+    `$defaultArgs = ((`$WslDefaultParameterValues.$_ -split ' '), "")[`$WslDefaultParameterValues.Disabled -eq `$true]
+    if (`$input.MoveNext()) {
+        `$input.Reset()
+        `$input | wsl.exe NVIM_APPNAME=nvim-dev $_ `$defaultArgs (`$args -split ' ')
+    } else {
+        wsl.exe NVIM_APPNAME=nvim-dev $_ `$defaultArgs (`$args -split ' ')
+    }
+}
+"@
+}
