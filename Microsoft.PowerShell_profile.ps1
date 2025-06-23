@@ -6,6 +6,13 @@ Import-Module Microsoft.Powershell.Utility
 Import-Module Microsoft.Powershell.Management
 Import-Module NetTCPIP
 Import-Module PowerShellGet
+
+# # In-house Utilities.
+Import-Module FileSystem
+Import-Module EnvManagement
+
+Import-Module PowershellSystem
+
 # Variables.
 $Env:BookmarksPath = "$HOME\.bookmarks"
 $Env:CDPATH = "$Env:BookmarksPath"
@@ -201,11 +208,7 @@ oh-my-posh init pwsh --config "$OhMyPoshTheme" | Invoke-Expression
 #   To check what you've got: `Get-Module -ListAvailable`
 Import-Module PowershellReadLine
 
-# # Utilities.
-Import-Module PowershellSystem
-Import-Module FileSystem
-Import-Module EnvManagement
-
+# Project modules.
 Set-Alias cd Set-LocationWithCdPath -Force -Option AllScope # Is not exported. More likely as it overrides cd.
 Import-Module PythonDevelopment
 Import-Module Testing # Currently only for palette testing (Show-ColorPalette).
