@@ -223,6 +223,15 @@ Import-Module ProjectInfo
 if (Get-CommandExists gsudo) {
     Import-Module gsudoModule
 }
+# References:
+# https://superuser.com/a/760632, zotero://select/library/items/FWBNEHKA
+function Get-FontFamilies {
+    # Have been ruining output for some reason. Works even without it.
+    # [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing")
+
+    (New-Object System.Drawing.Text.InstalledFontCollection).Families
+}
+
 # # Navigation
 Import-Module Navigation
 
