@@ -31,3 +31,7 @@ p > file.md
 p >> file.md
 #>
 Set-Alias p Get-Clipboard
+
+# TODO: Add these lines via Ansible.
+Set-Alias i invoke
+Set-Alias inv invoke
