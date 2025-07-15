@@ -432,3 +432,14 @@ function global:$_() {
 }
 "@
 }
+
+<#
+.DESCRIPTION
+Some tasks require elevated permissions. For instance, use `gsudo`.
+#>
+function Get-EnabledScheduledTasks() {
+    # QUESTION: Is it optimal? Does it load it every time or only first time?
+    Import-Module ScheduledTasks
+
+    Get-ScheduledTask | ? state -ne Disabled | Fzf
+}
