@@ -263,6 +263,8 @@ Import-Module ProjectInfo
 # # Aliases.
 Import-Module Aliases
 
+Import-Module DockerCompletion
+
 # * Fzf aliases.
 if ($(Get-CommandExists fzf*.exe) -and $(Get-ModuleExists PsFzf)) {
   Import-Module PsFzf
