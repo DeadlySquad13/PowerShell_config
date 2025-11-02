@@ -1,18 +1,3 @@
-# https://stackoverflow.com/a/78373181
-$PSModuleAutoLoadingPreference = 'None'
-
-# Basic modules.
-Import-Module Microsoft.Powershell.Utility
-Import-Module Microsoft.Powershell.Management
-Import-Module NetTCPIP
-Import-Module PowerShellGet
-
-# # In-house Utilities.
-Import-Module FileSystem
-Import-Module EnvManagement
-
-Import-Module PowershellSystem
-
 # Variables.
 $Env:BookmarksPath = "$HOME\.bookmarks"
 $Env:CDPATH = "$Env:BookmarksPath"
