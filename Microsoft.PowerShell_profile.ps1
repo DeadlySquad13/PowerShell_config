@@ -183,7 +183,7 @@ $OhMyPoshTheme = Join-Path -Path $OhMyPoshConfigPath -ChildPath 'DeadlyAtelierSu
 $Env:VIRTUAL_ENV_DISABLE_PROMPT=1 # Disable default: we have already one in our custom prompt.
 oh-my-posh init pwsh --config "$OhMyPoshTheme" | Invoke-Expression
 
-if ($(Get-CommandExists s)) {
+if ($(Test-ApplicationExists s)) {
     (& s --completion powershell) | Out-String | Invoke-Expression
 }
 
@@ -205,7 +205,7 @@ Import-Module Testing # Currently only for palette testing (Show-ColorPalette).
 Import-Module ProjectInfo
 
 # - Enable `gsudo !!`.
-if (Get-CommandExists gsudo) {
+if (Test-ApplicationExists gsudo) {
     Import-Module gsudoModule
 }
 
@@ -251,14 +251,14 @@ Import-Module Aliases
 Import-Module DockerCompletion
 
 # * Fzf aliases.
-if ($(Get-CommandExists fzf*.exe) -and $(Get-ModuleExists PsFzf)) {
+if ($(Test-ApplicationExists fzf*.exe) -and $(Get-ModuleExists PsFzf)) {
   Import-Module PsFzf
 
   Set-PsFzfOption -EnableAliasFuzzyEdit # `fe`,
   Set-PsFzfOption -EnableAliasFuzzyHistory # `fh`,
   Set-PsFzfOption -EnableAliasFuzzySetLocation # `fd`.
 
-  if (Get-CommandExists scoop) {
+  if (Test-ApplicationExists scoop) {
       Set-PsFzfOption -EnableAliasFuzzyScoop # `fs`.
   }
 }

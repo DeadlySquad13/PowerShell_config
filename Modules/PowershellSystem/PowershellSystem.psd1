@@ -69,7 +69,7 @@ Copyright = '(c) ds13. All rights reserved.'
 NestedModules = @('Cmdlets', 'Commands', 'Modules')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @('Get-CmdletAlias', 'Get-CommandExists', 'Get-ModuleExists')
+FunctionsToExport = @('Get-CmdletAlias', 'Test-CommandExists', 'Test-ApplicationExists', 'Get-ModuleExists')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
