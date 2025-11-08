@@ -202,9 +202,13 @@
       "segments": [
         {
           "properties": {
-            "cache_duration": "none"
+            "cache_duration": "none",
+            "always_enabled": true
           },
-          "template": " ~ ",
+          "foreground_templates": [
+            "{{ if .Env.GsudoCache }}#FFFFFF{{ end }}"
+          ],
+          "template": "{{ if .Root }} # {{else}} ~ {{end}}",
           "foreground": "#E06C75",
           "type": "text",
           "style": "plain"
