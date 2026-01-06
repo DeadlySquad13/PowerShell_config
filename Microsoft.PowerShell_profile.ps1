@@ -353,6 +353,14 @@ function gvi-wdev() {
 }
 # Set-Alias gvi-wdev "NVIM_APPNAME=nivm-dev $Env:GUI_EDITOR --wsl"
 
+function vi-dev-remote($params) {
+    invoke remote.vi-dev $params
+}
+
+function gvi-dev-remote($params) {
+    invoke remote.gvi-dev $params
+}
+
 function Get-IsoDate() {
     (Get-Date -Format "s").replace(':', '_')
 }
